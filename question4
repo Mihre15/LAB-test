@@ -1,0 +1,22 @@
+package Lab1;
+
+public class question4 {
+	public static void main(String[] args) {
+        int[] array = {1, 3, 40, 4, 10};
+        int maxElement = findMax(array);
+        System.out.println(maxElement);// Output: 5
+    }
+	public static int findMax(int[] array) {
+        if (array == null || array.length == 0) {
+            throw new IllegalArgumentException("Array must not be null or empty");
+        }
+        
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+        return max;
+}
+}
