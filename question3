@@ -1,0 +1,60 @@
+package Lab1;
+
+public class question3 {
+int size, front ,rear,items;
+int[] arr;
+int maxsize;
+public question3(int maxsiz) {
+	maxsize=maxsiz;
+	size=0;
+	front=0;
+	rear=-1;
+	items=0;
+}
+public boolean enqueue(int value) {
+	if(size==maxsize) {
+		return false;
+	}
+	rear = (rear + 1) % maxsize;
+    arr[rear] = value;
+    size++;
+    
+    return true;
+}
+public int dequeue() {
+	if(size==0) {
+		System.out.println("the queue is empty");
+	}
+	int result=arr[front];
+	front = (front + 1) % maxsize;
+    size--;
+    return result;
+}
+public int font() {
+	if(size==0) {
+		System.out.println("queue is empty");
+	}
+	return arr[front];
+}
+public int rear() {
+    if (size==0) {
+        System.out.println("queue is empty"); // Handle underflow
+    }
+    return arr[rear];
+}
+public int isempty() {
+	return size=0;
+}
+public static void main(String[] args) {
+	question3 q=new question3(3);
+	q.enqueue(1);
+	q.enqueue(2);
+	q.enqueue(3);
+	q.dequeue();
+	q.enqueue(4);
+	q.font();
+	q.rear();
+	
+}
+
+}
