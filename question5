@@ -1,0 +1,28 @@
+package Lab1;
+
+import java.util.Stack;
+
+public class question5 {
+	 public static String reverseString(String input) {
+	        Stack<Character> stack = new Stack<>();
+
+	        // Push all characters of the string into the stack
+	        for (char c : input.toCharArray()) {
+	            stack.push(c);
+	        }
+
+	        // Pop characters from the stack and build the reversed string
+	        StringBuilder reversed = new StringBuilder();
+	        while (!stack.isEmpty()) {
+	            reversed.append(stack.pop());
+	        }
+
+	        return reversed.toString();
+	    }
+	 public static void main(String[] args) {
+		 String input = "ezana";
+	        String reversed = reverseString(input);
+	        System.out.println(reversed);
+	 }
+
+}
